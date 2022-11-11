@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- style from gooogle fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap"
+      rel="stylesheet"
+    />
+    <!-- style -->
+    <style>
+      * {
+        margin: 0;
+      }
+
+      body {
+        background-image: url(https://images.unsplash.com/photo-1504532686278-1baa5d6358cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+        background-size: cover;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-position: left;
+      }
+      .header {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+      .header ul {
+        text-align: center;
+      }
+      .header ul li {
+        list-style: none;
+        text-decoration: none;
+        display: inline-block;
+        /* position: relative; */
+      }
+      .header ul li a {
+        display: block;
+
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 20px;
+        font-family: "Playfair Display SC", serif;
+        padding: 20px;
+        transition: all ease 0.5s;
+      }
+      .header ul li a:hover {
+        background-color: #21202585;
+      }
+      .outer {
+        justify-content: center;
+        display: flex;
+      }
+      .container {
+        width: 100%;
+        margin: 150px 150px;
+        /* margin-right: 600px; */
+        padding: 20px;
+        font-size: 50px;
+        color: #fff;
+        font-family: "Playfair Display SC", serif;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+      .secondhalf {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+      }
+      .secondhalf img {
+        position: relative;
+        top: 150px;
+        margin-bottom: 130px;
+        width: 100px;
+      }
+      .subheading {
+        font-size: 20px;
+      }
+
+      /* card */
+      .card {
+        position: relative;
+        width: 600px;
+        height: 350px;
+        background-color: #ccc;
+        border-radius: 20px;
+        align-items: center;
+        display: flex;
+        transition: all ease-out 0.5s;
+        justify-content: center;
+      }
+      .card h3 {
+        /* margin: 20px 40px; */
+        padding: 25px 80px;
+      }
+      .popup {
+        position: absolute;
+        top: 0;
+        left: 31%;
+        transform: translate(-3%, -15%) scale(0.01);
+        visibility: hidden;
+        transition: transform 0.4s, top 0.4s;
+      }
+      .open-popup {
+        top: 31%;
+        visibility: visible;
+        transform: translate(-3%, -15%);
+        background-image: url("images/Untitled.jpeg");
+        background-size: 100%;
+      }
+
+      @media (max-width: 991px) and (min-width: 600px) {
+        .outer {
+          width: 100%;
+        }
+        .container {
+          width: 60%;
+          margin: 100px 20px 20px 20px;
+        }
+        .secondhalf {
+          /* justify-content: center; */
+          align-items: center;
+          top: 100px;
+        }
+      }
+
+      @media (min-width: 200px) and (max-width: 599px) {
+        body {
+          margin: 0;
+          background-image: url(https://images.unsplash.com/photo-1504532686278-1baa5d6358cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+          background-size: cover;
+          height: 129vh;
+        }
+        .header {
+          width: 100%;
+        }
+        .header ul {
+          width: 120%;
+          text-align: center;
+
+          /* align-items: center; */
+        }
+        .header ul li {
+          /* justify-content: fit-content; */
+          list-style: none;
+          text-decoration: none;
+          display: inline-block;
+        }
+        /* .header ul li a {
+          display: block;
+        } */
+        .outer {
+          position: absolute;
+          align-items: center;
+          /* left: 100px; */
+          width: 100%;
+          margin: 73px;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+        }
+        .container {
+          margin: 60px;
+        }
+        .secondhalf {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          flex-direction: row;
+        }
+        .secondhalf img {
+          display: flex;
+          justify-content: space-evenly;
+          top: auto;
+          width: 90%;
+          position: relative;
+          padding: 0px 10px;
+
+          /* position: relative; */
+          /* top: 65px;
+          width: 40%; */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#" onclick="openPopup()">Hiring</a></li>
+        <li><a href="#" onclick="openPopup()">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="outer">
+      <div class="container">
+        <h3>AK <br />Enterprises</h3>
+        <h4>Dealer & Distributor</h4>
+        <h4 class="subheading">
+          We have made service our habit. It’s not something that we just strive
+          for – we live by this principle every day.
+        </h4>
+      </div>
+      <div class="secondhalf">
+        <a href="exp3.html"> <img src="images/pepsico.png" alt="" /></a>
+        <a href="exp3-jio.html"
+          ><img src="images/JIO-Logo-PNG-modified.png" alt=""
+        /></a>
+      </div>
+    </div>
+
+    <div class="popup" id="popup" onmouseleave="closePopup()">
+      <div class="card">
+        <h3>
+          <span>Address</span>
+          <hr />
+          <br />Maheshpur, Near Parwati Niketan <br />
+          School , Mehndiganj Road, Patna City <br />
+          800008 <br />
+          <br />
+          <span>Contacts</span>
+          <hr />
+          <br />
+          +91 9308306847 <br />
+
+          akenterprises05@gmail.com
+        </h3>
+      </div>
+    </div>
+
+    <script>
+      let popup = document.getElementById("popup");
+
+      function openPopup() {
+        popup.classList.add("open-popup");
+        document.querySelector("body").style.background("images/Untitled.jpeg");
+      }
+      function closePopup() {
+        popup.classList.remove("open-popup");
+      }
+    </script>
+  </body>
+</html>
